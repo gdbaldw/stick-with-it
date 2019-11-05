@@ -1,0 +1,27 @@
+{
+  "description": "sandbox",
+  "license": "MIT",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.json && cp index.html out",
+    "deploy": "netlify deploy --prod --dir=out",
+    "postinstall": "npx @pika/web"
+  },
+  "@pika/web": {
+    "webDependencies": [
+      "lit-html",
+      "lit-html/directives/repeat.js"
+    ]
+  },
+  "dependencies": {
+    "lit-html": "^1.1.2"
+  },
+  "devDependencies": {
+    "@pika/web": "^0.6.1",
+    "postinstall": "^0.6.0",
+    "typescript": "^3.6.4"
+  }
+}
