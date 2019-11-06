@@ -25,6 +25,7 @@ const template = (todo: TodoItem) => html`
       type="checkbox"
       ?checked=${todo._completed}
       @click=${() => {
+        todo._completed = !todo._completed;
         todo.dispatchEvent(new CustomEvent("onToggleCompleted"));
       }}
     />
@@ -40,8 +41,8 @@ const template = (todo: TodoItem) => html`
 `;
 
 class TodoItem extends HTMLElement {
-  _completed: boolean;
   _title: string;
+  _completed: boolean;
   _shadow: ShadowRoot;
   constructor(title = "a todo item", completed = false) {
     super();

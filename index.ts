@@ -1,1 +1,1 @@
-import "./src/components/lit-html-ts/index.js";
+import "./src/components/lit-element-ts/index.js";
