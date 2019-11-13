@@ -3,7 +3,8 @@ import {
   css,
   LitElement,
   customElement,
-  property
+  property,
+  query
 } from "../../../../web_modules/lit-element.js";
 import { repeat } from "../../../../web_modules/lit-html/directives/repeat.js";
 import { ItemTemplate } from "lit-html/directives/repeat";
@@ -19,9 +20,11 @@ export default class extends LitElement {
   @property({ type: Number })
   key = 2;
 
-  $input: HTMLInputElement;
-  firstUpdated() {
-    this.$input = this.shadowRoot.querySelector("input");
+  // @query("input")
+  // $input: any;
+
+  get $input() {
+    return this.shadowRoot.querySelector("input");
   }
 
   _submitTodo(e: Event) {
